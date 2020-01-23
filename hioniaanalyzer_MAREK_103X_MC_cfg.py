@@ -33,7 +33,7 @@ print( "[INFO] SofterSgMuAcceptance = " + ("True" if SofterSgMuAcceptance else "
 print( "[INFO] muonSelection        = " + muonSelection )
 print( "[INFO] onlySoftMuons        = " + ("True" if OnlySoftMuons else "False") )
 print( "[INFO] doTrimuons           = " + ("True" if doTrimuons else "False") )
-print( " " )
+print( "  " )
 
 # set up process
 process = cms.Process("HIOnia")
