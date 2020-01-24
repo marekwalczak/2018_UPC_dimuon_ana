@@ -4,8 +4,8 @@ from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 config = config()
 
 #config.section_('General')
-config.General.requestName = 'MC_gg_2M_2'
-config.General.workArea = 'CRAB_MC'
+config.General.requestName = 'MC_Ups_incoh_1S_05M_xDM'
+config.General.workArea = 'CRAB_MC_xDM'
 config.General.transferOutputs = True
 config.General.transferLogs = True
 
@@ -14,22 +14,23 @@ config.JobType.allowUndistributedCMSSW = True # use unsupported linux etc
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'hioniaanalyzer_MAREK_103X_MC_cfg.py'
 config.JobType.maxMemoryMB = 4000
-config.Data.outputPrimaryDataset = 'MC_gg_2M_test_2'
-config.Data.userInputFiles = open('input_LFN_gg_2M_2.txt').readlines()
+config.Data.outputPrimaryDataset = 'MC_Ups_incoh_1S_05M_xDM'
+config.Data.userInputFiles = open('input_LFN_incoh_1S_05M.txt').readlines()
 #config.Data.inputDataset = '/first_coh_test_LFN_1/mwalczak-1st_coh_test_LFN_1-d69006bd2f548a03d77cae8a8463c1ca/USER'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 1
 #NJOBS = 2000  # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
 #config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
-config.Data.totalUnits = 2000
+config.Data.totalUnits = 500
 
 #config.section_('Data')
 #config.Data.outLFNDirBase = '/store/group/phys_diffraction/lbyl_2018/mc_lbl/digi_raw'
 config.Data.allowNonValidInputDataset = True
 config.Data.publication = True
 #config.Data.outputDatasetTag = 'reco_coh_test_1'
-config.Site.storageSite = 'T2_PL_Swierk'
-config.Site.whitelist   = ['T2_PL_Swierk']
+#config.Site.storageSite = 'T2_PL_Swierk'
+#config.Site.whitelist   = ['T2_PL_Swierk']
+config.Site.storageSite = 'T2_US_Vanderbilt'
 
 
 

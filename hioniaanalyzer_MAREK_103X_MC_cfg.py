@@ -15,7 +15,7 @@ applyCuts      = False # At HiAnalysis level, apply kinematic acceptance cuts + 
 SumETvariables = False  # Whether to write out SumET-related variables
 SofterSgMuAcceptance = False # Whether to accept muons with a softer acceptance cuts than the usual (pt>3.5GeV at central eta, pt>1.8 at high |eta|). Applies when applyCuts=True
 doTrimuons     = False # Make collections of trimuon candidates in addition to dimuons, and keep only events with >0 trimuons
-atLeastOneCand = True # Keep only events that have one selected dimuon (or at least one trimuon if doTrimuons = true). BEWARE this can cause trouble in .root output if no event is selected by onia2MuMuPatGlbGlbFilter!
+atLeastOneCand = False # Keep only events that have one selected dimuon (or at least one trimuon if doTrimuons = true). BEWARE this can cause trouble in .root output if no event is selected by onia2MuMuPatGlbGlbFilter!
 OneMatchedHLTMu = -1   # Keep only di(tri)muons of which the one(two) muon(s) are matched to the HLT Filter of this number. You can get the desired number in the output of oniaTree. Set to -1 for no matching.
 #############################################################################
 keepExtraColl  = False # General Tracks + Stand Alone Muons + Converted Photon collections
@@ -42,10 +42,11 @@ process = cms.Process("HIOnia")
 options = VarParsing.VarParsing ('analysis')
 
 # Input and Output File Names
-options.outputFile = "Oniatree_MC_test_gg_1k.root"
+options.outputFile = "Oniatree_MC_1k_xDM.root"
 options.secondaryOutputFile = "Jpsi_DataSet.root"
 options.inputFiles =[
-    'file:/afs/cern.ch/work/m/mwalczak/PbPb_2018/MC/new/CMSSW_10_3_2/src/3/3rd.root'
+    'file:/afs/cern.ch/work/m/mwalczak/PbPb_2018/CMSSW_10_3_3_patch1/src/HiAnalysis/HiOnia/test/test_coh_ups_1S_3rd/3rd_100.root'
+    #'file:/afs/cern.ch/work/m/mwalczak/PbPb_2018/MC/new/CMSSW_10_3_2/src/3/3rd.root'
     #'file:/afs/cern.ch/work/m/mwalczak/PbPb_2018/MC/new/CMSSW_10_3_2/src/3/crab_projects/crab_reco_coh_test_1/results/3rd_test_1.root'
     #'file:E3E3B162-7D9B-1F45-9E57-D7E52FB3AD28.root' # file dataset=/HIDoubleMuon/HIRun2018A-PromptReco-v1/AOD 
 
