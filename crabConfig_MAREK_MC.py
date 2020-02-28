@@ -4,7 +4,7 @@ from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 config = config()
 
 #config.section_('General')
-config.General.requestName = 'MC_Ups_incoh_1S_05M_xDM'
+config.General.requestName = 'MC_Ups_incoh_1S_05M_xDM_redone'
 config.General.workArea = 'CRAB_MC_xDM'
 config.General.transferOutputs = True
 config.General.transferLogs = True
@@ -14,7 +14,7 @@ config.JobType.allowUndistributedCMSSW = True # use unsupported linux etc
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'hioniaanalyzer_MAREK_103X_MC_cfg.py'
 config.JobType.maxMemoryMB = 4000
-config.Data.outputPrimaryDataset = 'MC_Ups_incoh_1S_05M_xDM'
+config.Data.outputPrimaryDataset = 'MC_Ups_incoh_1S_05M_xDM_redone'
 config.Data.userInputFiles = open('input_LFN_incoh_1S_05M.txt').readlines()
 #config.Data.inputDataset = '/first_coh_test_LFN_1/mwalczak-1st_coh_test_LFN_1-d69006bd2f548a03d77cae8a8463c1ca/USER'
 config.Data.splitting = 'FileBased'
@@ -28,10 +28,9 @@ config.Data.totalUnits = 500
 config.Data.allowNonValidInputDataset = True
 config.Data.publication = True
 #config.Data.outputDatasetTag = 'reco_coh_test_1'
-#config.Site.storageSite = 'T2_PL_Swierk'
+config.Site.storageSite = 'T2_PL_Swierk'
 #config.Site.whitelist   = ['T2_PL_Swierk']
-config.Site.storageSite = 'T2_US_Vanderbilt'
-
+#config.Site.storageSite = 'T2_US_Vanderbilt'
 
 
 
