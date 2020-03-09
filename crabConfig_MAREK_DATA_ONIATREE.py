@@ -3,7 +3,7 @@ from WMCore.Configuration import Configuration
 config = Configuration()
 
 config.section_("General")
-config.General.requestName = "HIForward-HIRun2018A-04Apr2019-v1-AOD-HF-full_UPCtrig_2v2"
+config.General.requestName = "HIForward-HIRun2018A-04Apr2019-v1-AOD-HF-full_UPCtrig_cross-check"
 config.General.workArea = 'CRAB_UPCtrig_allDM'
 config.General.transferOutputs = True
 config.General.transferLogs = True
@@ -12,7 +12,7 @@ config.section_("JobType")
 config.JobType.allowUndistributedCMSSW = True # use unsupported linux etc
 config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "hioniaanalyzer_MAREK_103X_DATA_cfg.py"
-config.JobType.maxMemoryMB = 6000         # request high memory machines.
+config.JobType.maxMemoryMB = 5000         # request high memory machines.
 config.JobType.maxJobRuntimeMin = 2750    # request longer runtime, ~48 hours.
 
 ## software : CMSSW_10_3_1
@@ -25,19 +25,19 @@ config.Data.inputDataset = '/HIForward/HIRun2018A-04Apr2019-v1/AOD'
 #config.Data.splitting = "LumiBased" 
 #config.Data.splitting = 'Automatic'
 config.Data.splitting = 'EventAwareLumiBased' # give number of events, not lumis
-config.Data.unitsPerJob = 60000
+config.Data.unitsPerJob = 600000
 config.Data.totalUnits = -1
 
 # Number of events in /HIForward/HIRun2018A-04Apr2019-v1/AOD: 605315459, 10% = 60000000
 # Number of lumis in /HIForward/HIRun2018A-04Apr2019-v1/AOD: 41025
 
-#config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/HI/PromptReco/Cert_326381-327564_HI_PromptReco_Collisions18_JSON_HF_and_MuonPhys.txt'
-config.Data.lumiMask = '/afs/cern.ch/work/m/mwalczak/PbPb_2018/CMSSW_10_3_3_patch1/src/HiAnalysis/HiOnia/test/CRAB_UPCtrig_allDM/crab_HIForward-HIRun2018A-04Apr2019-v1-AOD-HF-full_UPCtrig/results/notFinishedLumis.json'
+config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/HI/PromptReco/Cert_326381-327564_HI_PromptReco_Collisions18_JSON_HF_and_MuonPhys.txt'
+#config.Data.lumiMask = '/afs/cern.ch/work/m/mwalczak/PbPb_2018/CMSSW_10_3_3_patch1/src/HiAnalysis/HiOnia/test/CRAB_UPCtrig_allDM/crab_HIForward-HIRun2018A-04Apr2019-v1-AOD-HF-full_UPCtrig/results/notFinishedLumis.json'
 
 
 config.Data.publication = False
 #config.Data.outputPrimaryDataset = "AOD"
-config.Data.outputDatasetTag = 'HIForward-HIRun2018A-04Apr2019-v1-AOD-HF-full_UPCtrig_2v2'
+config.Data.outputDatasetTag = 'HIForward-HIRun2018A-04Apr2019-v1-AOD-HF-full_UPCtrig_cross-check'
 #config.Data.outLFNDirBase = '/store/group/phys_heavyions/dileptons/Data2018/PbPb502TeV/TTrees/PromptAOD' ##CHECK IT!!##
 config.Data.outLFNDirBase = '/store/user/mwalczak/'
 
