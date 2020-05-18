@@ -4,8 +4,8 @@ from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 config = config()
 
 #config.section_('General')
-config.General.requestName = 'MC_Ups_incoh_1S_05M_xDM_redone_testdupsko'
-config.General.workArea = 'CRAB_MC_xDM'
+config.General.requestName = 'MC_jpsi_5p02TeV_Pythia8_200files'
+config.General.workArea = 'CRAB_MC_Pythia'
 config.General.transferOutputs = True
 config.General.transferLogs = True
 
@@ -13,24 +13,34 @@ config.General.transferLogs = True
 config.JobType.allowUndistributedCMSSW = True # use unsupported linux etc
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'hioniaanalyzer_MAREK_103X_MC_cfg.py'
-config.JobType.maxMemoryMB = 4000
-config.Data.outputPrimaryDataset = 'MC_Ups_incoh_1S_05M_xDM_redone'
-config.Data.userInputFiles = open('input_LFN_incoh_1S_05M.txt').readlines()
-#config.Data.inputDataset = '/first_coh_test_LFN_1/mwalczak-1st_coh_test_LFN_1-d69006bd2f548a03d77cae8a8463c1ca/USER'
+config.JobType.maxMemoryMB = 5000
+#config.Data.outputPrimaryDataset = 'MC_Ups_incoh_jpsi_05M_xDM'
+#config.Data.userInputFiles = open('input_LFN_incoh_1S_05M.txt').readlines()
+#config.Data.inputDataset = '/STARlight_InCohJpsi2MuMu_PbPb5TeV/shuaiy-STARlight_InCohJpsi2MuMu_PbPb5TeV_Reco_v1-4a15772ba976f0ddb208ff38f4df19d3/USER'
+config.Data.inputDataset = '/JPsi_pThat-2_TuneCP5_HydjetDrumMB_5p02TeV_Pythia8/HINPbPbAutumn18DR-mva98_103X_upgrade2018_realistic_HI_v11-v1/AODSIM'
+
+config.Data.inputDBS = 'global'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 1
 #NJOBS = 2000  # This is not a configuration parameter, but an auxiliary variable that we use in the next line.
 #config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
-config.Data.totalUnits = 500
+config.Data.totalUnits = 200
 
 #config.section_('Data')
-#config.Data.outLFNDirBase = '/store/group/phys_diffraction/lbyl_2018/mc_lbl/digi_raw'
+config.Data.outLFNDirBase = '/store/user/mwalczak/' # % (getUsernameFromSiteDB(), config.General.requestName)
 config.Data.allowNonValidInputDataset = True
 config.Data.publication = True
-#config.Data.outputDatasetTag = 'reco_coh_test_1'
-config.Site.storageSite = 'T2_PL_Swierk'
+config.Data.outputDatasetTag = 'MC_jpsi_5p02TeV_Pythia8_200files'
+#config.Site.storageSite = 'T2_PL_Swierk'
 #config.Site.whitelist   = ['T2_PL_Swierk']
 #config.Site.storageSite = 'T2_US_Vanderbilt'
+config.Site.storageSite = 'T2_PL_Swierk'
+
+
+
+
+
+
 
 
 
@@ -159,5 +169,5 @@ config.Site.storageSite = 'T2_US_Vanderbilt'
 # config.Data.ignoreLocality = True
 # config.Site.whitelist = ["T2_FR*"]
 
-'''
 
+'''
