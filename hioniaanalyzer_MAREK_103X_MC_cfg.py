@@ -42,7 +42,7 @@ process = cms.Process("HIOnia")
 options = VarParsing.VarParsing ('analysis')
 
 # Input and Output File Names
-options.outputFile = "Oniatree_MC_1k_xDM.root"
+options.outputFile = "Oniatree_MC_xDM.root"
 options.secondaryOutputFile = "Jpsi_DataSet.root"
 options.inputFiles =[
     'file:/afs/cern.ch/work/m/mwalczak/PbPb_2018/CMSSW_10_3_3_patch1/src/HiAnalysis/HiOnia/test/test_coh_ups_1S_3rd/3rd_100.root'
